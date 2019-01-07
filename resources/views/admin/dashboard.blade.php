@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.app')
 @section('admin_css')
   <link  rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}">
 @endsection
@@ -18,8 +18,6 @@
           </button>
         </div>
       </div>
-
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
       <h2>Section title</h2>
       <div class="table-responsive">
