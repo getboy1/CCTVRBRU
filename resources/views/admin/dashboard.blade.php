@@ -1,10 +1,13 @@
 @extends('admin.app')
+@section('breadcrumbs')
+  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+@endsection
 @section('admin_css')
   <link  rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}">
 @endsection
 @section('content')
 @include('admin.partials.navbar')
-    
+
       <h2>Section title</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">

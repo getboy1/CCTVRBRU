@@ -38,7 +38,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+          'title'=>'required|min:5',
+          'slug'=>'required|min:5|unique:categories'
+      ]);
+      $categories = Category::create($request->only('title','description','slug'));
+      $categories->parents()->attach($request->parent_id,['created_at'=>now(), 'updated_at'=>now()]);
+      return back()->with('message','Category Added Successfully!');
     }
 
     /**
